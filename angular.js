@@ -81,4 +81,5 @@ app.controller("myCtrl", function($scope, $rootScope, $routeParams, $http) {
             $scope.cartItems[index].quantity -= 1;
         }
     };
+    $scope.name ="hiang";
 });
