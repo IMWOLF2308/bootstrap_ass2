@@ -1,0 +1,52 @@
+<style>
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        margin: 10px 0;
+      
+        border-radius: 5px;
+    }
+    .cart-item img {
+        width: 100px;
+    }
+    .cart-total {
+        text-align: right;
+        margin-top: 20px;
+    }
+    
+    .quantity-control {
+        display: flex;
+        align-items: center;
+    }
+    .quantity-control button {
+        margin: 0 5px;
+    }
+</style>
+
+<div class="container" ng-controller="myCtrl"> 
+    <h2 class="mt-5">Giỏ hàng của bạn ({{cartItems.length}})</h2>
+    <div ng-repeat="item in cartItems" class="cart-item">
+        <div>
+            <img ng-src="{{item.image}}" alt="{{item.name}}">
+        </div>
+        <div>
+            <h5>{{item.name}}</h5>
+            <p>{{item.locate}}<br>{{item.date}}</p>
+            <p>{{item.price | currency:"":0}}đ</p>
+        </div>
+        <div class="quantity-control">
+            <button class="btn btn-info" ng-click="decreaseQuantity(item)">-</button>
+            <span>{{item.quantity}}</span>
+            <button class="btn btn-info " ng-click="increaseQuantity(item)">+</button>
+        </div>
+        <div>
+            <button class="btn-remove" ng-click="removeItem(item)">🗑️</button>
+        </div>
+    </div>
+    <div class="cart-total">
+        <h4>Tạm tính: {{getTotal() | currency:"":0}}đ</h4>
+        <button class="btn btn-danger">Mua ngay</button>
+    </div>
+</div>

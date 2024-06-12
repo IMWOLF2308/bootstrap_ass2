@@ -1,0 +1,218 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "VietJet Air",
+            "price": 1004639,
+            "image": "ám1/image/slide1.png",
+            "date": "8-12-2024",
+            "locate": "Hà Nội - TP HCM",
+            "category": "Trong nước"
+        },
+        {
+            "id": 2,
+            "name": "Vietravel Airlines",
+            "price": 1013241,
+            "image": "ám1/image/slide2.png",
+            "date": "17-10-2024",
+            "locate": "Hà Nội - Đà Nẵng",
+            "category": "Trong nước"
+        },
+        {
+            "id": 3,
+            "name": "VietJet Air",
+            "price": 1004639,
+            "date": "9-12-2024",
+            "image": "ám1/image/slide3.png",
+            "locate": "TP HCM - Hà Nội",
+            "category": "Trong nước"
+        },
+        {
+            "id": 4,
+            "name": "VietJet Air",
+            "price": 594217,
+            "image": "ám1/image/slide4.png",
+            "date": "22-5-2024",
+            "locate": "TP HCM - Nha Trang",
+            "category": "Trong nước"
+        },
+        {
+            "id": 5,
+            "name": "Việt Nam",
+            "price": 0,
+            "image": "ám1/image/mmm1.png",
+            "view": "16,763 accommodations",
+            "category": "quốc tế"
+        },
+        {
+            "id": 6,
+            "name": "Thái Lan",
+            "price": 0,
+            "image": "ám1/image/mmm2.png",
+            "view": "27,449 accommodations",
+            "category": "quốc tế"
+        },
+        {
+            "id": 7,
+            "name": "Singapore",
+            "price": 0,
+            "image": "ám1/image/mmm3.png",
+            "view": "644 accommodations",
+            "category": "quốc tế"
+        },
+        {
+            "id": 8,
+            "name": "Malaysia",
+            "price": 0,
+            "image": "ám1/image/mmm4.png",
+            "view": "8,371 accommodations",
+            "category": "quốc tế"
+        },
+        {
+            "id": 9,
+            "name": "Indonesia",
+            "price": 0,
+            "image": "ám1/image/mmm5.png",
+            "view": "53,405 accommodations",
+            "category": "quốc tế"
+        },
+        {
+            "id": 10,
+            "name": "Hàn Quốc",
+            "price": 0,
+            "image": "ám1/image/mmm6.png",
+            "view": "15,929 accommodations",
+            "category": "quốc tế"
+        },
+        {
+            "id": 11,
+            "badge": "Hòa Vang",
+            "name": "Sun World Ba Na Hills tại Đà Nẵng",
+            "price": 1004639,
+            "image": "ám1/image/slide5.png",
+            "date": "8-12-2024",
+            "locate": "Hà Nội - TP HCM",
+            "category": "Trong nước1"
+        },
+        {
+            "id": 12,
+            "badge":"Vĩnh Nguyên",
+            "name": "Vé VinWonders Nha Trang",
+            "price": 1013241,
+            "image": "ám1/image/slide6.png",
+            "date": "17-10-2024",
+            "locate": "Hà Nội - Đà Nẵng",
+            "category": "Trong nước1"
+        },
+        {
+            "id": 13,
+            "badge":"Bãi Cháy",
+            "name": "Vé Sun World Hạ Longr",
+            "price": 1004639,
+            "date": "9-12-2024",
+            "image": "ám1/image/slide7.png",
+            "locate": "TP HCM - Hà Nội",
+            "category": "Trong nước1"
+        },
+        {
+            "id": 14,
+            "badge":"Xã An Hòa",
+            "name": "Vé Công viên nước The Amazing Bay",
+            "price": 594217,
+            "image": "ám1/image/slide8.png",
+            "date": "22-5-2024",
+            "locate": "TP HCM - Nha Trang",
+            "category": "Trong nước1"
+        },
+       
+        {
+            "id": 16,
+            "name": "Bangkok",
+            "price": 0,
+            "image": "ám1/image/abc2.png",
+            "view": "Thailand",
+            "category": "quốc tế2"
+        },
+        {
+            "id": 17,
+            "name": "Seoul",
+            "price": 0,
+            "image": "ám1/image/abc3.png",
+            "view": "South Korea",
+            "category": "quốc tế2"
+        },
+        {
+            "id": 18,
+            "name": "Istanbul",
+            "price": 0,
+            "image": "ám1/image/abc4.png",
+            "view": "Turkey",
+            "category": "quốc tế2"
+        },
+        {
+            "id": 19,
+            "name": "Liverpool",
+            "price": 0,
+            "image": "ám1/image/abc5.png",
+            "view": "United Kingdom",
+            "category": "quốc tế2"
+        },
+        {
+            "id": 20,
+            "title": "Đáp ứng mọi nhu cầu của bạn",
+            "description": "Từ chuyến bay, lưu trú, đến điểm tham quan, bạn có thể tin chọn sản phẩm hoàn chỉnh và Hướng Dẫn Du Lịch của chúng tôi.",
+            "image": "ám1/image/icon.png",
+            "category": "service"
+        },
+        {
+            "id": 21,
+            "title": "Tùy chọn đặt chỗ linh hoạt",
+            "description": "Kế hoạch thay đổi bất ngờ? Đừng lo! Đổi lịch hoặc Hoàn tiền dễ dàng.",
+            "image": "ám1/image/icon2.png",
+            "category": "service"
+        },
+        {
+            "id": 22,
+            "title": "Thanh toán an toàn và thuận tiện",
+            "description": "Tận hưởng nhiều cách thanh toán an toàn, bằng loại tiền thuận tiện nhất cho bạn.",
+            "image": "ám1/image/icon3.png",
+            "category": "service"
+        },
+        {
+            "id": 23,
+            "name": "Khám phá 2 đảo, Sun World Hòn Thơm, Bữa trưa buffet tại Phú Quốc ...",
+            "price": 1300000,
+            "image": "ám1/image/bca1.png",
+            "category": "tour"
+        },
+        {
+            "id": 24,
+            "name": "Tour 4 đảo Nam Phú Quốc - 1 ngày",
+            "price": 722850,
+            "image": "ám1/image/bca2.png",
+            "category": "tour"
+        },
+        {
+            "id": 25,
+            "name": "Tour khám phá 3 đảo tại Phú Quốc - 1 ngày",
+            "price": 605000,
+            "image": "ám1/image/bca3.png",
+            "category": "tour"
+        },
+        {
+            "id": 26,
+            "name": "Tour ngắm hoàng hôn và câu mực đêm trên đảo Phú Quốc - Nửa ngày",
+            "price": 330000,
+            "image": "ám1/image/bca4.png",
+            "category": "tour"
+        },
+        {
+            "id": 27,
+            "name": "Đi bộ dưới biển Seawalker và khám phá 3 đảo Phú Quốc - Tour 1 ngày củ...",
+            "price": 2200000,
+            "image": "ám1/image/bca5.png",
+            "category": "tour"
+        
+        }
+    ]
+}

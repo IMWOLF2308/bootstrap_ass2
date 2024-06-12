@@ -1,0 +1,214 @@
+/* Kiểu Header */
+.header {
+    background-image: url('../image/background.png');
+    background-size: cover;
+    background-position: center;
+    height: 360px;
+    color: white;
+}
+.header2 {
+    background-image: url('../image/background.png'); /* Đường dẫn đến hình ảnh */
+    background-size: cover;
+    background-position: center;
+    height: 146px;
+    color: white;
+}
+
+/* Thanh tìm kiếm và Dropdown */
+.timkiem .dropdown-toggle::after {
+    display: none !important;
+}
+
+.timkiem .dropdown-toggle {
+    color: black !important;
+    background-color: white !important;
+}
+
+.timkiem .nav-item.dropdown {
+    width: 350px;
+}
+
+.timkiem .search {
+    width: 50px;
+}
+
+/* Navbar */
+.navbar {
+    background: transparent !important;
+}
+
+/* Footer */
+footer {
+    background-color: #1C2930;
+    color: white;
+}
+
+/* Màu chữ tùy chỉnh */
+.custom-text-color {
+    color: #564841;
+}
+
+/* Kiểu chung */
+* {
+    border-radius: 5px;
+}
+
+/* Tùy chỉnh thẻ Card */
+.card-custom {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.badge-custom {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff5252;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.price {
+    color: #ff5722;
+}
+
+.price-discount {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Điều khiển Carousel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000;
+    border-radius: 50%;
+}
+
+/* Thẻ Destination */
+.destination-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.destination-card img {
+    
+
+    transition: transform 0.2s;
+}
+
+.destination-card:hover img {
+    transform: scale(1.1);
+}
+
+.destination-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+}
+
+/* Hiệu ứng Hover thẻ Card */
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* Nội dung thẻ Card */
+.card-body {
+    width: 100%;
+    background: white;
+    color: black;
+    padding: 10px;
+}
+
+/* Nút trong Modal */
+.modal-body .btn {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+.modal-body .btn img {
+    margin-right: 10px;
+}
+
+/* Ảnh Header */
+.header-image {
+    width: 100%;
+    height: 300px;
+    background: url('../image/poster.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+.header-text {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+}
+
+/* Container tìm kiếm */
+.search-container {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Vị trí hiện tại */
+.current-location {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.current-location button {
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    margin-left: 10px;
+}
+
+/* Danh mục Tour */
+.tour-category {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.tour-category .btn {
+    border-radius: 20px;
+    margin: 5px;
+}
+
+.tour-category .btn.active {
+    background-color: #ff6f61;
+    color: white;
+}
+
+/* Tiêu đề thẻ Card */
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Văn bản thẻ Card */
+.card-text del {
+    color: gray;
+    margin-right: 10px;
+}
+
+/* Giá thẻ Card */
+.card-price {
+    color: #ff6f61;
+    font-weight: bold;
+}

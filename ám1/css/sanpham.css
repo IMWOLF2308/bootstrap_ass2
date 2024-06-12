@@ -1,0 +1,198 @@
+header {
+    background-image: url('../image/background.png'); /* Đường dẫn đến hình ảnh */
+    background-size: cover;
+    background-position: center;
+    height: 146px;
+    color: white;
+}
+.dautrang nav,
+.dautrang h1,
+.dautrang p {
+    margin-left: 95px;
+}
+
+
+footer {
+    background-color: #1C2930;
+    color: white;
+}
+.custom-text-color {
+    color: #564841;
+}
+* {
+    border-radius: 5px; /* or any value you prefer */
+}
+.card-custom {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.badge-custom {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff5252; /* Chọn màu này nếu bạn muốn giữ màu đỏ */
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.price {
+    color: #ff5722;
+}
+
+.price-discount {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000;
+    border-radius: 50%;
+}
+.destination-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+.destination-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+.destination-card:hover img {
+    transform: scale(1.1);
+}
+.destination-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+}
+.card {
+    border: none;
+    overflow: hidden;
+}
+.card img {
+    transition: transform 0.3s ease;
+}
+.card:hover img {
+    transform: scale(1.1);
+}
+.card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+}
+
+.badge-custom {
+    background-color: #ff5252;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.price {
+    color: #ff5722;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.price-discount {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 1rem;
+}
+.rating {
+    font-size: 1.5rem;
+    color: #1e88e5;
+}
+.map-link {
+    color: #1e88e5;
+}
+.experience-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.experience-list li:before {
+    content: "\2022";
+    color: #1e88e5;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+.dautrang {
+    background: linear-gradient(to right, #0066cc, #33ccff);
+    color: white;
+}
+.location, .hours {
+    color: #8bc34a;
+}
+.ticket-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.price {
+    color: #ff5722;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+}
+.discount {
+    color: #ff5722;
+    font-weight: bold;
+    background-color: #f8d7da;
+    border-radius: 3px;
+    padding: 2px 5px;
+    margin-left: 10px;
+}
+.btn-select {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+.easy-refund {
+    color: #f0ad4e;
+    font-weight: bold;
+}
+.contact-info {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.section-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.faq, .general-info, .other-activities {
+    margin-top: 20px;
+}
+.general-info p, .other-activities p {
+    margin-bottom: 5px;
+}
+.btn-more {
+    background-color: white;
+    border: 1px solid #007bff;
+    color: #007bff;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+}

@@ -1,0 +1,482 @@
+<style>
+    footer {
+    background-color: #1C2930;
+    color: white;
+}
+.custom-text-color {
+    color: #564841;
+}
+* {
+    border-radius: 5px; 
+}
+
+.header-image {
+    width: 100%;
+    height: 300px;
+    background: url('ám1/image/poster.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+.header-text {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+}
+.search-container {
+    padding: 20px;
+    text-align: center;
+}
+.current-location {
+    margin: 20px 0;
+    text-align: center;
+}
+.current-location button {
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    margin-left: 10px;
+}
+.tour-category {
+    margin: 20px 0;
+    text-align: center;
+}
+.tour-category .btn {
+    border-radius: 20px;
+    margin: 5px;
+}
+.tour-category .btn.active {
+    background-color: #ff6f61;
+    color: white;
+}
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+.card-text del {
+    color: gray;
+    margin-right: 10px;
+}
+.card-price {
+    color: #ff6f61;
+    font-weight: bold;
+}
+.card:hover img {
+    transform: scale(1.1);
+}
+</style>
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a
+                    class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    href="#">Xperience</a></li>
+
+            <li class="breadcrumb-item active" style="color: blue;" aria-current="page">Tour</li>
+        </ol>
+    </nav>
+    <h1>Tour</h1>
+    <div class="header-image">
+        <div class="header-text">
+            <!-- Placeholder for additional text if needed -->
+        </div>
+    </div>
+
+    <div class="search-container">
+        <form class="form-inline justify-content-center">
+            <input type="text" class="form-control mr-2"
+                placeholder="Bạn có ý tưởng gì cho chuyến đi tiếp theo không?">
+            <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+        </form>
+    </div>
+
+    <div class="current-location text-start">
+        <p>
+            <span>Vị trí hiện tại của bạn</span>
+            <button class="btn btn-outline-secondary">Việt Nam</button>
+            <button class="btn btn-link">Thay đổi</button>
+        </p>
+        <a href="#" class="btn btn-warning">Xem các hoạt động ở vị trí của bạn</a>
+    </div>
+</div>
+<div class="container">
+    <h2 class="mt-4">Các Tour bán chạy</h2>
+    <div class="tour-category text-start">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="phu-quoc-tab" data-toggle="pill" href="#phu-quoc" role="tab"
+                    aria-controls="phu-quoc" aria-selected="true">Phú Quốc</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="nha-trang-tab" data-toggle="pill" href="#nha-trang" role="tab"
+                    aria-controls="nha-trang" aria-selected="false">Nha Trang</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="da-nang-tab" data-toggle="pill" href="#da-nang" role="tab"
+                    aria-controls="da-nang" aria-selected="false">Đà Nẵng</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="da-lat-tab" data-toggle="pill" href="#da-lat" role="tab"
+                    aria-controls="da-lat" aria-selected="false">Đà Lạt</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="ninh-binh-ha-long-tab" data-toggle="pill" href="#ninh-binh-ha-long"
+                    role="tab" aria-controls="ninh-binh-ha-long" aria-selected="false">Ninh Bình-Hạ Long</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="sapa-ha-giang-tab" data-toggle="pill" href="#sapa-ha-giang" role="tab"
+                    aria-controls="sapa-ha-giang" aria-selected="false">Sapa-Hà Giang</a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="phu-quoc" role="tabpanel" aria-labelledby="phu-quoc-tab">
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-sm-6 mb-4" ng-repeat="p in products | filter:{'category':'tour'} | limitTo:5 ">
+                    <div class="card">
+                        <img class="img-fluid" src="{{p.image}}" alt="" style="object-fit: cover;" width=100%; height=50px;>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ p.name }}</h5>
+                            <p class="card-text card-price">{{ p.price }}</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="nha-trang" role="tabpanel" aria-labelledby="nha-trang-tab">
+            <!-- Nội dung tab Nha Trang -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mb-4" ng-repeat="p in products | filter:{'category':'tour'} | limitTo:5 ">
+                <div class="card">
+                    <img class="img-fluid" src="{{p.image}}" alt="" style="object-fit: cover;" width=100%; height=50px;>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ p.name }}</h5>
+                        <p class="card-text card-price">{{ p.price }}</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="tab-pane fade" id="da-nang" role="tabpanel" aria-labelledby="da-nang-tab">
+            <!-- Nội dung tab Đà Nẵng -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mb-4" ng-repeat="p in products | filter:{'category':'tour'} | limitTo:5 ">
+                <div class="card">
+                    <img class="img-fluid" src="{{p.image}}" alt="" style="object-fit: cover;" width=100%; height=50px;>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ p.name }}</h5>
+                        <p class="card-text card-price">{{ p.price }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="da-lat" role="tabpanel" aria-labelledby="da-lat-tab">
+            <!-- Nội dung tab Đà Lạt -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mb-4" ng-repeat="p in products | filter:{'category':'tour'} | limitTo:5 ">
+                <div class="card">
+                    <img class="img-fluid" src="{{p.image}}" alt="" style="object-fit: cover;" width=100%; height=50px;>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ p.name }}</h5>
+                        <p class="card-text card-price">{{ p.price }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="ninh-binh-ha-long" role="tabpanel" aria-labelledby="ninh-binh-ha-long-tab">
+            <!-- Nội dung tab Ninh Bình-Hạ Long -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mb-4" ng-repeat="p in products | filter:{'category':'tour'} | limitTo:5 ">
+                <div class="card">
+                    <img class="img-fluid" src="{{p.image}}" alt="" style="object-fit: cover;" width=100%; height=50px;>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ p.name }}</h5>
+                        <p class="card-text card-price">{{ p.price }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="sapa-ha-giang" role="tabpanel" aria-labelledby="sapa-ha-giang-tab">
+            <!-- Nội dung tab Sapa-Hà Giang -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mb-4" ng-repeat="p in products | filter:{'category':'tour'} | limitTo:5 ">
+                <div class="card">
+                    <img class="img-fluid" src="{{p.image}}" alt="" style="object-fit: cover;" width=100%; height=50px;>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ p.name }}</h5>
+                        <p class="card-text card-price">{{ p.price }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <h2 class="text-danger">Tour trọn gói xuất ngoại</h2>
+    <p>Khám phá tour 5N4Đ trọn gói dành cho gia đình!!</p>
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="dong-nam-a-tab" data-toggle="pill" href="#dong-nam-a" role="tab"
+                aria-controls="dong-nam-a" aria-selected="true">Đông Nam Á</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="han-nhat-dai-trung-tab" data-toggle="pill" href="#han-nhat-dai-trung" role="tab"
+                aria-controls="han-nhat-dai-trung" aria-selected="false">Hàn-Nhật-Đài-Trung</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="dong-nam-a" role="tabpanel" aria-labelledby="dong-nam-a-tab">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img alt="Tour Thái Lan trọn gói (Bangkok, Pattaya) - 5N4Đ "
+                            src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/3089574963829/Thailand-Full-Package-Tour-%2528Bangkok-Pattaya%2529---5D4N-Tour-64b85e7f-8a65-4a09-a657-bae97166ba5b.jpeg?_src=imagekit&amp;tr=c-at_max,h-569,q-60,w-320"
+                            importance="low" loading="lazy"
+                            srcset="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/3089574963829/Thailand-Full-Package-Tour-%2528Bangkok-Pattaya%2529---5D4N-Tour-64b85e7f-8a65-4a09-a657-bae97166ba5b.jpeg?_src=imagekit&amp;tr=c-at_max,h-569,q-60,w-320 1x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/3089574963829/Thailand-Full-Package-Tour-%2528Bangkok-Pattaya%2529---5D4N-Tour-64b85e7f-8a65-4a09-a657-bae97166ba5b.jpeg?_src=imagekit&amp;tr=dpr-2,c-at_max,h-569,q-60,w-320 2x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/3089574963829/Thailand-Full-Package-Tour-%2528Bangkok-Pattaya%2529---5D4N-Tour-64b85e7f-8a65-4a09-a657-bae97166ba5b.jpeg?_src=imagekit&amp;tr=dpr-3,c-at_max,h-569,q-60,w-320 3x"
+                            width="100%" height="100%" style="object-fit:cover;object-position:50% 50%">
+                        <div class="card-body">
+                            <h5 class="card-title">Tour Thái Lan trọn gói (Bangkok, Pattaya) - 5N4Đ</h5>
+                            <p class="card-text">VND 7.690.000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img alt="Tour trọn gói Bali (Kintamani, Bali Swing, đền Tanah Lot, cổng trời Handara) - 4N3Đ"
+                            src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/9786459776670/Bali-Full-Package-Tour-%2528Kintamani-Bali-Swing-Tanah-Lot-Handara-Gate%2529---4D3N-Tour-942eb32a-ee10-4593-b97a-18a21c1ebb68.jpeg?_src=imagekit&amp;tr=c-at_max,h-569,q-60,w-320"
+                            importance="low" loading="lazy"
+                            srcset="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/9786459776670/Bali-Full-Package-Tour-%2528Kintamani-Bali-Swing-Tanah-Lot-Handara-Gate%2529---4D3N-Tour-942eb32a-ee10-4593-b97a-18a21c1ebb68.jpeg?_src=imagekit&amp;tr=c-at_max,h-569,q-60,w-320 1x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/9786459776670/Bali-Full-Package-Tour-%2528Kintamani-Bali-Swing-Tanah-Lot-Handara-Gate%2529---4D3N-Tour-942eb32a-ee10-4593-b97a-18a21c1ebb68.jpeg?_src=imagekit&amp;tr=dpr-2,c-at_max,h-569,q-60,w-320 2x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/9786459776670/Bali-Full-Package-Tour-%2528Kintamani-Bali-Swing-Tanah-Lot-Handara-Gate%2529---4D3N-Tour-942eb32a-ee10-4593-b97a-18a21c1ebb68.jpeg?_src=imagekit&amp;tr=dpr-3,c-at_max,h-569,q-60,w-320 3x"
+                            width="100%" height="100%" style="object-fit:cover;object-position:50% 50%">
+                        <div class="card-body">
+                            <h5 class="card-title">Tour trọn gói Bali (Kintamani, Bali Swing, đền Tanah Lot, cổng
+                                trời Handara) - 4N3Đ</h5>
+                            <p class="card-text">VND 10.990.000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img alt="Tour Singapore trọn gói (Gardens by the Bay, đảo Sentosa, Jurassic Mile) - 3N2Đ"
+                            src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/5684490664670/Singapore-Full-Package-Tour-%2528Gardens-by-the-Bay-Sentosa-Island-Jurassic-Mile%2529---3D2N-Tour-71b00156-b4ad-45a6-8436-15f69574582d.jpeg?_src=imagekit&amp;tr=c-at_max,h-569,q-60,w-320"
+                            importance="low" loading="lazy"
+                            srcset="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/5684490664670/Singapore-Full-Package-Tour-%2528Gardens-by-the-Bay-Sentosa-Island-Jurassic-Mile%2529---3D2N-Tour-71b00156-b4ad-45a6-8436-15f69574582d.jpeg?_src=imagekit&amp;tr=c-at_max,h-569,q-60,w-320 1x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/5684490664670/Singapore-Full-Package-Tour-%2528Gardens-by-the-Bay-Sentosa-Island-Jurassic-Mile%2529---3D2N-Tour-71b00156-b4ad-45a6-8436-15f69574582d.jpeg?_src=imagekit&amp;tr=dpr-2,c-at_max,h-569,q-60,w-320 2x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/5684490664670/Singapore-Full-Package-Tour-%2528Gardens-by-the-Bay-Sentosa-Island-Jurassic-Mile%2529---3D2N-Tour-71b00156-b4ad-45a6-8436-15f69574582d.jpeg?_src=imagekit&amp;tr=dpr-3,c-at_max,h-569,q-60,w-320 3x"
+                            width="100%" height="100%" style="object-fit:cover;object-position:50% 50%">
+                        <div class="card-body">
+                            <h5 class="card-title">Tour Singapore trọn gói (Gardens by the Bay, đảo Sentosa,
+                                Jurassic Mile) - 3N2Đ</h5>
+                            <p class="card-text">VND 9.990.000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img alt="Tour Singapore và Malaysia trọn gói (Gardens by the Bay, Tháp đôi, Cao nguyên Genting, Malacca) - 5N4Đ"
+                            src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/5307181424394/Singapore-and-Malaysia-Full-Package-Tour-%2528Gardens-by-the-Bay-Twin-Towers-Genting-Highlands-Malacca%2529---5D4N-Tour-dad680b5-c427-47af-9b27-8231f5647be6.jpeg?_src=imagekit&amp;tr=c-at_max,h-569,q-60,w-320"
+                            importance="low" loading="lazy"
+                            srcset="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/5307181424394/Singapore-and-Malaysia-Full-Package-Tour-%2528Gardens-by-the-Bay-Twin-Towers-Genting-Highlands-Malacca%2529---5D4N-Tour-dad680b5-c427-47af-9b27-8231f5647be6.jpeg?_src=imagekit&amp;tr=c-at_max,h-569,q-60,w-320 1x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/5307181424394/Singapore-and-Malaysia-Full-Package-Tour-%2528Gardens-by-the-Bay-Twin-Towers-Genting-Highlands-Malacca%2529---5D4N-Tour-dad680b5-c427-47af-9b27-8231f5647be6.jpeg?_src=imagekit&amp;tr=dpr-2,c-at_max,h-569,q-60,w-320 2x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/5307181424394/Singapore-and-Malaysia-Full-Package-Tour-%2528Gardens-by-the-Bay-Twin-Towers-Genting-Highlands-Malacca%2529---5D4N-Tour-dad680b5-c427-47af-9b27-8231f5647be6.jpeg?_src=imagekit&amp;tr=dpr-3,c-at_max,h-569,q-60,w-320 3x"
+                            width="100%" height="100%" style="object-fit:cover;object-position:50% 50%">
+                        <div class="card-body">
+                            <h5 class="card-title">Tour Singapore và Malaysia trọn gói (Gardens by the Bay, Tháp
+                                đôi, Cao nguyên Genting, ...) - 4N3Đ</h5>
+                            <p class="card-text">VND 12.990.000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="han-nhat-dai-trung" role="tabpanel" aria-labelledby="han-nhat-dai-trung-tab">
+            <!-- Nội dung tab Hàn-Nhật-Đài-Trung -->
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <!-- Tour theo chủ đề -->
+    <h2>Tour theo chủ đề</h2>
+    <p>Khám phá loại tour bạn yêu thích</p>
+    <ul class="nav nav-pills mb-3">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Tour tham quan</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Tour thiên nhiên</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Tour biển</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Các loại khác</a>
+        </li>
+    </ul>
+    <div class="row">
+        <!-- Card 1 -->
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+            <div class="card mb-4">
+                <img alt="Tour khám phá Bà Nà Hills (Cầu Vàng Đà Nẵng) - 1 ngày, VND 783.133"
+                    src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001357730516/Ba-Na-Hills-%2528Vietnam-Golden-Bridge%2529---Day-Tour-fe2e456e-05a1-4081-96df-c8fff570575b.png?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256"
+                    importance="low" loading="lazy"
+                    srcset="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001357730516/Ba-Na-Hills-%2528Vietnam-Golden-Bridge%2529---Day-Tour-fe2e456e-05a1-4081-96df-c8fff570575b.png?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256 1x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001357730516/Ba-Na-Hills-%2528Vietnam-Golden-Bridge%2529---Day-Tour-fe2e456e-05a1-4081-96df-c8fff570575b.png?_src=imagekit&amp;tr=dpr-2,c-at_max,h-456,q-60,w-256 2x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001357730516/Ba-Na-Hills-%2528Vietnam-Golden-Bridge%2529---Day-Tour-fe2e456e-05a1-4081-96df-c8fff570575b.png?_src=imagekit&amp;tr=dpr-3,c-at_max,h-456,q-60,w-256 3x"
+                    width="100%" height="100%" style="object-fit:cover;object-position:50% 50%">
+                <div class="card-body">
+                    <h5 class="card-title">Tour khám phá Bà Nà Hills (Cầu Vàng Đà Nẵng) - 1 ngày</h5>
+                    <p class="card-text"><s>VND 793.133</s> VND 722.500</p>
+                </div>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+            <div class="card mb-4">
+                <img alt="Tour du thuyền vịnh Hạ Long - 1 ngày, VND 200.000"
+                    src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/5596295958911/Ha-Long-Bay---1-Day-Cruise-Tour-8d28c92f-5509-4d6b-b585-e40466869a76.png?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256"
+                    importance="low" loading="lazy"
+                    srcset="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/5596295958911/Ha-Long-Bay---1-Day-Cruise-Tour-8d28c92f-5509-4d6b-b585-e40466869a76.png?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256 1x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/5596295958911/Ha-Long-Bay---1-Day-Cruise-Tour-8d28c92f-5509-4d6b-b585-e40466869a76.png?_src=imagekit&amp;tr=dpr-2,c-at_max,h-456,q-60,w-256 2x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/5596295958911/Ha-Long-Bay---1-Day-Cruise-Tour-8d28c92f-5509-4d6b-b585-e40466869a76.png?_src=imagekit&amp;tr=dpr-3,c-at_max,h-456,q-60,w-256 3x"
+                    width="100%" height="100%" style="object-fit:cover;object-position:50% 50%">
+                <div class="card-body">
+                    <h5 class="card-title">Tour du thuyền vịnh Hạ Long - 1 ngày</h5>
+                    <p class="card-text"><s>VND 200.000</s> VND 160.000 <span class="badge badge-danger">Tiết kiệm
+                            20%</span></p>
+                </div>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+            <div class="card mb-4">
+                <img alt="Tour du thuyền 5 sao cao cấp vịnh Hạ Long - 1 ngày"
+                    src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/3719982087665/Ha-Long-Bay-with-Premium-5-star-Cruise---1-Day-Tour-700a8172-5dbf-4288-849b-b8ca27b84da7.png?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256"
+                    importance="low" loading="lazy"
+                    srcset="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/3719982087665/Ha-Long-Bay-with-Premium-5-star-Cruise---1-Day-Tour-700a8172-5dbf-4288-849b-b8ca27b84da7.png?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256 1x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/3719982087665/Ha-Long-Bay-with-Premium-5-star-Cruise---1-Day-Tour-700a8172-5dbf-4288-849b-b8ca27b84da7.png?_src=imagekit&amp;tr=dpr-2,c-at_max,h-456,q-60,w-256 2x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/3719982087665/Ha-Long-Bay-with-Premium-5-star-Cruise---1-Day-Tour-700a8172-5dbf-4288-849b-b8ca27b84da7.png?_src=imagekit&amp;tr=dpr-3,c-at_max,h-456,q-60,w-256 3x"
+                    width="100%" height="100%" style="object-fit:cover;object-position:50% 50%">
+                <div class="card-body">
+                    <h5 class="card-title">Tour du thuyền 5 sao cao cấp vịnh Hạ Long - 1 ngày</h5>
+                    <p class="card-text">VND 1.000.000</p>
+                </div>
+            </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+            <div class="card mb-4">
+                <img alt="Tour đảo VIP Nha Trang (Lặn ống thở, Tắm bùn, Bữa trưa hải sản) - 1 ngày"
+                    src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001275031930/VIP-Three-Island-Trip-in-Nha-Trang---Hon-Tam---Day-Tour-57c82281-ccf3-4a65-a3a6-f2edd2d7047d.jpeg?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256"
+                    importance="low" loading="lazy"
+                    srcset="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001275031930/VIP-Three-Island-Trip-in-Nha-Trang---Hon-Tam---Day-Tour-57c82281-ccf3-4a65-a3a6-f2edd2d7047d.jpeg?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256 1x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001275031930/VIP-Three-Island-Trip-in-Nha-Trang---Hon-Tam---Day-Tour-57c82281-ccf3-4a65-a3a6-f2edd2d7047d.jpeg?_src=imagekit&amp;tr=dpr-2,c-at_max,h-456,q-60,w-256 2x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001275031930/VIP-Three-Island-Trip-in-Nha-Trang---Hon-Tam---Day-Tour-57c82281-ccf3-4a65-a3a6-f2edd2d7047d.jpeg?_src=imagekit&amp;tr=dpr-3,c-at_max,h-456,q-60,w-256 3x"
+                    width="100%" height="100%" style="object-fit:cover;object-position:50% 50%">
+                <div class="card-body">
+                    <h5 class="card-title">Tour đảo VIP Nha Trang (Lặn ống thở, Tắm bùn, Bữa trưa hải sản) - 1 ngày
+                    </h5>
+                    <p class="card-text">VND 750.000</p>
+                </div>
+            </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+            <div class="card mb-4">
+                <img alt="Tour Cù Lao Chàm - 1 ngày | Khởi hành Đà Nẵng"
+                    src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001357752554/Cham-Islands---Day-Tour-Da-Nang-Departure-05620c4e-c13d-4a22-80b5-a4011e685bf7.jpeg?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256"
+                    importance="low" loading="lazy"
+                    srcset="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001357752554/Cham-Islands---Day-Tour-Da-Nang-Departure-05620c4e-c13d-4a22-80b5-a4011e685bf7.jpeg?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256 1x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001357752554/Cham-Islands---Day-Tour-Da-Nang-Departure-05620c4e-c13d-4a22-80b5-a4011e685bf7.jpeg?_src=imagekit&amp;tr=dpr-2,c-at_max,h-456,q-60,w-256 2x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001357752554/Cham-Islands---Day-Tour-Da-Nang-Departure-05620c4e-c13d-4a22-80b5-a4011e685bf7.jpeg?_src=imagekit&amp;tr=dpr-3,c-at_max,h-456,q-60,w-256 3x"
+                    width="100%" height="100%" style="object-fit:cover;object-position:50% 50%">
+                <div class="card-body">
+                    <h5 class="card-title">Tour Cù Lao Chàm - 1 ngày | Khởi hành Đà Nẵng</h5>
+                    <p class="card-text">VND 650.602</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#">xem thêm</a>
+
+    <!-- Du lịch khắp thế giới -->
+    <h2>Du lịch khắp thế giới</h2>
+    <ul class="nav nav-pills mb-3">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Hàn Quốc</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Nhật Bản</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Singapore</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Thái Lan</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Bali</a>
+        </li>
+    </ul>
+    <div class="row">
+        <!-- Card 1 -->
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+            <div class="card mb-4">
+                <img alt="Tour Hàn Quốc trọn gói (Seoul, đảo Nami, Everland) - 5N4Đ"
+                    src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/3702938456149/South-Korea-Full-Package-Tour-%2528Seoul-Nami-Island-Everland%2529---5D4N-0fd31ba3-04b7-49db-8b27-f21f8be2be9f.jpeg?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256"
+                    importance="low" loading="lazy"
+                    srcset="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/3702938456149/South-Korea-Full-Package-Tour-%2528Seoul-Nami-Island-Everland%2529---5D4N-0fd31ba3-04b7-49db-8b27-f21f8be2be9f.jpeg?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256 1x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/3702938456149/South-Korea-Full-Package-Tour-%2528Seoul-Nami-Island-Everland%2529---5D4N-0fd31ba3-04b7-49db-8b27-f21f8be2be9f.jpeg?_src=imagekit&amp;tr=dpr-2,c-at_max,h-456,q-60,w-256 2x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/3702938456149/South-Korea-Full-Package-Tour-%2528Seoul-Nami-Island-Everland%2529---5D4N-0fd31ba3-04b7-49db-8b27-f21f8be2be9f.jpeg?_src=imagekit&amp;tr=dpr-3,c-at_max,h-456,q-60,w-256 3x"
+                    width="100%" height="100%" style="object-fit:cover;object-position:50% 50%">
+                <div class="card-body">
+                    <h5 class="card-title">Tour Hàn Quốc trọn gói (Seoul, đảo Nami, Everland) - 5N4Đ</h5>
+                    <p class="card-text">VND 13.990.000</p>
+                </div>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+            <div class="card mb-4">
+                <img alt="Tour Du Thuyền Holic Công Cộng tại Busan｜ Gwangan-ri &amp; Haeundae｜Hàn Quốc"
+                    src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/9062894271941/Yacht-Holic-Busan-Yacht-Public-Tour-Gwangan-ri-Haeundae-South-Korea-99991507-1dbd-4720-b815-a1e038f751a2.jpeg?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256"
+                    importance="low" loading="lazy"
+                    srcset="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/9062894271941/Yacht-Holic-Busan-Yacht-Public-Tour-Gwangan-ri-Haeundae-South-Korea-99991507-1dbd-4720-b815-a1e038f751a2.jpeg?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256 1x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/9062894271941/Yacht-Holic-Busan-Yacht-Public-Tour-Gwangan-ri-Haeundae-South-Korea-99991507-1dbd-4720-b815-a1e038f751a2.jpeg?_src=imagekit&amp;tr=dpr-2,c-at_max,h-456,q-60,w-256 2x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/9062894271941/Yacht-Holic-Busan-Yacht-Public-Tour-Gwangan-ri-Haeundae-South-Korea-99991507-1dbd-4720-b815-a1e038f751a2.jpeg?_src=imagekit&amp;tr=dpr-3,c-at_max,h-456,q-60,w-256 3x"
+                    width="100%" height="100%" style="object-fit:cover;object-position:50% 50%">
+                <div class="card-body">
+                    <h5 class="card-title">Tour Du Thuyền Holic Cộng Cộng tại Busan | Gwangan-ri & Haeundae</h5>
+                    <p class="card-text">VND 372.443</p>
+                </div>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+            <div class="card mb-4">
+                <img alt="DMZ 3rd Invasion Tunnel &amp; Suspension Bridge - 1-Day Tour"
+                    src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/6934053753959/DMZ-3rd-Invasion-Tunnel-Suspension-Bridge---1-Day-Tour-7eaa813d-b8b2-4f33-b91d-0c71d6fbcbb2.jpeg?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256"
+                    importance="low" loading="lazy"
+                    srcset="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/6934053753959/DMZ-3rd-Invasion-Tunnel-Suspension-Bridge---1-Day-Tour-7eaa813d-b8b2-4f33-b91d-0c71d6fbcbb2.jpeg?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256 1x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/6934053753959/DMZ-3rd-Invasion-Tunnel-Suspension-Bridge---1-Day-Tour-7eaa813d-b8b2-4f33-b91d-0c71d6fbcbb2.jpeg?_src=imagekit&amp;tr=dpr-2,c-at_max,h-456,q-60,w-256 2x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/6934053753959/DMZ-3rd-Invasion-Tunnel-Suspension-Bridge---1-Day-Tour-7eaa813d-b8b2-4f33-b91d-0c71d6fbcbb2.jpeg?_src=imagekit&amp;tr=dpr-3,c-at_max,h-456,q-60,w-256 3x"
+                    width="100%" height="100%" style="object-fit:cover;object-position:50% 50%">
+                <div class="card-body">
+                    <h5 class="card-title">DMZ 3rd Invasion Tunnel & Suspension Bridge - 1-Day Tour</h5>
+                    <p class="card-text">VND 1.117.361</p>
+                </div>
+            </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+            <div class="card mb-4">
+                <img alt="Tour Hàn Quốc trọn gói (Busan, Daegu, Seoul) - 5N5Đ"
+                    src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/4140457838175/South-Korea-Full-Package-Tour-%2528Busan-Daegu-Seoul%2529---5D5N-045272c7-940e-411f-a70a-031d8dfdc333.png?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256"
+                    importance="low" loading="lazy"
+                    srcset="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/4140457838175/South-Korea-Full-Package-Tour-%2528Busan-Daegu-Seoul%2529---5D5N-045272c7-940e-411f-a70a-031d8dfdc333.png?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256 1x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/4140457838175/South-Korea-Full-Package-Tour-%2528Busan-Daegu-Seoul%2529---5D5N-045272c7-940e-411f-a70a-031d8dfdc333.png?_src=imagekit&amp;tr=dpr-2,c-at_max,h-456,q-60,w-256 2x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/4140457838175/South-Korea-Full-Package-Tour-%2528Busan-Daegu-Seoul%2529---5D5N-045272c7-940e-411f-a70a-031d8dfdc333.png?_src=imagekit&amp;tr=dpr-3,c-at_max,h-456,q-60,w-256 3x"
+                    width="100%" height="100%" style="object-fit:cover;object-position:50% 50%">
+                <div class="card-body">
+                    <h5 class="card-title">Tour Hàn Quốc trọn gói (Busan, Daegu, Seoul) - 5N5Đ</h5>
+                    <p class="card-text">VND 16.990.000</p>
+                </div>
+            </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+            <div class="card mb-4">
+                <img alt="Xe buýt du lịch thành phố Dongdaemun: Khóa học văn hóa truyền thống | Seoul"
+                    src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/7348326741262/Dongdaemun-City-Tour-Bus-Traditional-Culture-Course-Seoul-f99b66d9-5a64-4b3a-8780-7c9c91a768ba.jpeg?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256"
+                    importance="low" loading="lazy"
+                    srcset="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/7348326741262/Dongdaemun-City-Tour-Bus-Traditional-Culture-Course-Seoul-f99b66d9-5a64-4b3a-8780-7c9c91a768ba.jpeg?_src=imagekit&amp;tr=c-at_max,h-456,q-60,w-256 1x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/7348326741262/Dongdaemun-City-Tour-Bus-Traditional-Culture-Course-Seoul-f99b66d9-5a64-4b3a-8780-7c9c91a768ba.jpeg?_src=imagekit&amp;tr=dpr-2,c-at_max,h-456,q-60,w-256 2x, https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/7348326741262/Dongdaemun-City-Tour-Bus-Traditional-Culture-Course-Seoul-f99b66d9-5a64-4b3a-8780-7c9c91a768ba.jpeg?_src=imagekit&amp;tr=dpr-3,c-at_max,h-456,q-60,w-256 3x"
+                    width="100%" height="100%" style="object-fit:cover;object-position:50% 50%">
+                <div class="card-body">
+                    <h5 class="card-title">Xe buýt du lịch thành phố Dongdaemun: Khóa học văn hóa</h5>
+                    <p class="card-text">VND 312.852</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container justify-content-center">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-12 mt-3 ms-5">
+            <img class="img-fluid" src="ám1/image/banner13.png" alt="">
+
+        </div>
+    </div>
+</div>
